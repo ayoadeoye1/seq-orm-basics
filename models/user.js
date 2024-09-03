@@ -76,6 +76,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     age: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+          notNull: {
+            msg: "Password cannot be null"
+          },
+          notEmpty: {
+            msg: "Password cannot be empty"
+          }
+      }
     }
   }, {
     sequelize,
